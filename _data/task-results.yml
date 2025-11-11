@@ -1,0 +1,49 @@
+
+lab1:
+  results:
+    - "**Resultado esperado:** Terraform estará disponible desde cualquier terminal o PowerShell. No será necesario navegar manualmente al directorio para usarlo."
+    - "**Resultado esperado:** Se mostrará en consola la versión actual de Terraform instalada."
+lab2:
+  results:
+    - "**Resultado esperado:** AWS CLI autenticado correctamente, identidad validada y región predeterminada configurada"
+    - "**Resultado esperado:** Se habrá creado el archivo base de configuración de Terraform para trabajar con AWS y el directorio habrá sido inicializado con `terraform init`."
+    - "**Resultado esperado:** Visual Studio Code estará listo para trabajar con archivos Terraform de forma eficiente, con ayuda de resaltado de sintaxis, validación en tiempo real y autocompletado."
+lab3:
+  results:
+    - "**Resultado esperado:** Red pública creada: VPC, Subnet, IGW, Tabla y Ruta por defecto asociada."
+    - "**Resultado esperado:** Security Group declarado con HTTP/80 abierto (uso solo de laboratorio)."
+    - "**Resultado esperado:** Instancia EC2 declarada en la subred pública; Nginx expuesto en HTTP/80."
+lab4:
+  results:
+    - "**Resultado esperado:** Variables y locals añadidos, listos para ser asignados a los recursos."
+    - "**Resultado esperado:** Red refactorizada para usar variables (CIDRs, AZ) y locals (nombres)."
+    - "**Resultado esperado:** Security Group parametrizado con locals (nombres)."
+    - "**Resultado esperado:** Instancia EC2 parametrizada (tipo, nombres) manteniendo la funcionalidad."
+lab5:
+  results:
+    - "**Resultado esperado:** Outputs agregados correctamente: red, seguridad y EC2 (IP/DNS/URL)."
+lab6:
+  results:
+    - "**Resultado esperado:** Inicialización completada; proveedor AWS descargado y backend local listo."
+    - "**Resultado esperado:** Plan revisado; se visualizan los recursos a crear y los efectos de cambiar variables."
+    - "**Resultado esperado:** Recursos aplicados en AWS y outputs impresos en consola."
+    - "**Resultado esperado:** Salidas consultadas correctamente; puedes validar la URL de Nginx en el navegador."
+    - "**Resultado esperado:** Infraestructura eliminada y estado actualizado; entorno limpio."
+lab7:
+  results:
+    - "**Resultado esperado:** El archivo `terraform.tfstate` localizado en la raíz del proyecto."
+    - "**Resultado esperado:** Estado visualizado y objetos listados; identificación de recursos y atributos."
+    - "**Resultado esperado:** El `.tfstate` queda protegido contra exposición y respaldado antes de acciones críticas."
+lab8:
+  results:
+    - "**Resultado esperado:** Variables declaradas (incluida la sensible) y locals confirmados para nombres/etiquetas."
+    - "**Resultado esperado:** Archivo terraform.tfvars creado con valores de entorno e iniciales + secreto simulado."
+    - "**Resultado esperado:** Etiquetas aplicadas y secreto protegido con output sensible."
+lab9:
+  results:
+    - "**Resultado esperado:** Estructura de proyecto creada con archivos separados por función."
+    - "**Resultado esperado:** El archivo `provider.tf` contiene la configuración del proveedor y versiones."
+    - "**Resultado esperado:** Variables centralizadas y listas para usarse desde tfvars."
+    - "**Resultado esperado:** Outputs centralizados en un único archivo."
+    - "**Resultado esperado:** El archivo `main.tf` contiene solo locals y recursos limpios."
+    - "**Resultado esperado:** Terraform corre correctamente con los archivos organizados."

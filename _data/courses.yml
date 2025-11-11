@@ -1,0 +1,57 @@
+# _data/courses.yml
+terra_aws_ess: 
+  title: "Terraform con AWS Essentials" 
+  intro: "DESCRIPCIÓN_DEL_CURSO_AQUI"
+  labs:
+      # EJEMPLO
+    - id: lab1
+      title: "Instalación y Verificación de Terraform en Windows"
+      url:  "/lab1/lab1/"
+      duration: "25 min"
+      desc: "Instalación de Terraform y preparación del entorno para AWS" # DESCRIPCION BREVE DE LA PRACTICA 100-120 CARACTERES
+      # ESTRUCTURA COPIAR Y PEGAR CUANTAS VECES SEA NECESARIO
+    - id: lab2
+      title: "Autenticación de un proveedor"
+      url:  "/lab2/lab2/"
+      duration: "15"
+      desc: "Autenticación del proveedor AWS en Terraform usando AWS CLI y configuración en `main.tf`"
+    - id: lab3
+      title: "Definición de recursos en Terraform"
+      url:  "/lab3/lab3/"
+      duration: "15"
+      desc: "Definiras tu propia red mínima pública (VPC, Subred, IGW, Tabla y Ruta) y desplegarás una Instancia de Amazon EC2"
+    - id: lab4
+      title: "Creación y Asignación de Variables en Terraform"
+      url:  "/lab4/lab4/"
+      duration: "15"
+      desc: "Definiras variables para facilitar la reutilización de los valores en los recursos."
+    - id: lab5
+      title: "Creación de outputs en Terraform"
+      url:  "/lab5/lab5/"
+      duration: "10"
+      desc: "Agregarás bloques `output` al final de `main.tf` para mostrar información útil tras una ejecución."
+    - id: lab6
+      title: "Implementación del Ciclo de Vida con Terraform CLI"
+      url:  "/lab6/lab6/"
+      duration: "35"
+      desc: "Completarás el flujo típico de Terraform en AWS inicializar, planear, aplicar, consultar salidas y destruir."
+    - id: lab7
+      title: "Leer e interpretar el archivo .tfstate generado."
+      url:  "/lab7/lab7/"
+      duration: "20"
+      desc: "Inspeccionarás el archivo .tfstate que mantiene el mapeo entre tu configuración y los recursos reales en AWS."
+    - id: lab8
+      title: "Crear archivo .tfvars con claves y etiqueta sensible"
+      url:  "/lab8/lab8/"
+      duration: "20"
+      desc: "Separaras valores en `terraform.tfvars` y usaras variables sensibles (`sensitive = true`) para ocultar secretos en la salida."
+    - id: lab9
+      title: "Estructurar un proyecto básico en Terraform"
+      url:  "/lab9/lab9/"
+      duration: "20"
+      desc: "Aplicarás buenas prácticas de organización en Terraform"
+    - id: lab10
+      title: "Recomendaciones"
+      url:  "/lab10/lab10/"
+      duration: "Sin tiempo"
+      desc: "Diferentes estructuras de proyectos en Terraform"
