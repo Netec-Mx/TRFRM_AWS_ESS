@@ -107,6 +107,7 @@ En esta tarea se creará un directorio de proyecto y se escribirá un archivo `m
 - **Paso 5.** Abre esta carpeta desde VS Code: **`File > Open Folder... > Selecciona Desktop y luego TERRALABS`** y confirma la ventana emergente.
 
   {% include step_image.html %}
+  
   {% include step_image.html %}
 
 #### Tarea 2.2. Crear y editar el archivo `main.tf`
