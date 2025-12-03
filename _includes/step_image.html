@@ -15,37 +15,56 @@ Parámetros:
 {%- assign dir = include.dir | default: page.images_base -%}
 {%- assign ext = include.ext | default: "png" -%}
 {%- assign fig = include.figure | default: "false" -%}
-{%- assign start = include.start_at | default: 1 | plus: 0 -%}
 {%- assign missing_text = include.missing_text | default: "Falta imagen" -%}
+
+{%- comment -%}
+Cálculo del número de imagen (n)
+- Si pasas step/num, se usa ese valor.
+- Si no, se autoincrementa usando una variable global POR PÁGINA
+  llamada step_image_counter (NO usamos {% increment %}).
+{%- endcomment -%}
 
 {%- if include.step or include.num -%}
   {%- assign n = include.step | default: include.num | plus: 0 -%}
 {%- else -%}
-  {%- capture _i %}{% increment step_image_counter %}{% endcapture -%}
-  {%- assign n = _i | plus: start -%}
+  {%- assign start = include.start_at | default: 1 | plus: 0 -%}
+  {%- if step_image_counter -%}
+    {%- assign step_image_counter = step_image_counter | plus: 1 -%}
+  {%- else -%}
+    {%- assign step_image_counter = start -%}
+  {%- endif -%}
+  {%- assign n = step_image_counter -%}
 {%- endif -%}
 
 {%- capture p1 -%}{{ dir }}/{{ n }}.{{ ext }}{%- endcapture -%}
 {%- capture p2 -%}{{ dir }}/img{{ n }}.{{ ext }}{%- endcapture -%}
 
 {%- assign file = site.static_files | where: "path", p1 | first -%}
-{%- if file == nil -%}{%- assign file = site.static_files | where: "path", p2 | first -%}{%- endif -%}
+{%- if file == nil -%}
+  {%- assign file = site.static_files | where: "path", p2 | first -%}
+{%- endif -%}
 
-{%- assign alt = include.alt | default: " " | append: n -%}
+{%- assign alt = include.alt | default: "Paso " | append: n -%}
 
 {%- if file -%}
   {%- assign src = file.path | relative_url -%}
   {%- if fig == "true" -%}
-<figure class="step-figure"><img src="{{ src }}" alt="{{ alt }}" class="step-media"><figcaption>{{ alt }}</figcaption></figure>
+<figure class="step-figure">
+  <img src="{{ src }}" alt="{{ alt }}" class="step-media">
+  <figcaption>{{ alt }}</figcaption>
+</figure>
   {%- else -%}
 <img src="{{ src }}" alt="{{ alt }}" class="step-media">
   {%- endif -%}
 {%- else -%}
   {%- assign mode = include.mode | default: "block" -%}
   {%- if mode == "inline" -%}
-    <span class="img-missing img-missing--inline" aria-live="polite"><strong>{{ missing_text }}:</strong> {{ alt }}</span>
+<span class="img-missing img-missing--inline" aria-live="polite">
+  <strong>{{ missing_text }}:</strong> {{ alt }}
+</span>
   {%- else -%}
-    <span class="img-missing img-missing--block" aria-live="polite"><strong>{{ missing_text }}:</strong> {{ alt }}</span>
+<span class="img-missing img-missing--block" aria-live="polite">
+  <strong>{{ missing_text }}:</strong> {{ alt }}
+</span>
   {%- endif -%}
 {%- endif -%}
-
